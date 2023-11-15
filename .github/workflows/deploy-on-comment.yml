@@ -21,7 +21,7 @@ jobs:
           git config --local user.name "GitHub Action"
           git fetch origin gh-pages
           git checkout -b gh-pages origin/gh-pages
-          mkdir -p build
+          mkdir -p build/${{ github.head_ref }}
           cp -r package/* build/${{ github.head_ref }}/
           git add build/
           git commit -m "Deploy static files to gh-pages"
